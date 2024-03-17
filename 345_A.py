@@ -13,27 +13,32 @@
 
 # 自分のコード
 
-def flag(S):
-    if len(S) < 3:
-        return "No"
-    elif S[0] != "<" or S[-1] != ">":
-        return "No"
-    else:
-        for char in S[1:-1]:
-            if char != "=":
-                return "No"
-        return "Yes"
+# def flag(S):
+#     if len(S) < 3:
+#         return "No"
+#     elif S[0] != "<" or S[-1] != ">":
+#         return "No"
+#     else:
+#         for char in S[1:-1]:
+#             if char != "=":
+#                 return "No"
+#         return "Yes"
 
-S = input()
-print(flag(S))
+# S = input()
+# print(flag(S))
+
+#review
+  # 条件をゆるいところから絞っているのがまずダメ
+  # その結果、コードが長くなり読みづらくなってしまっている
 
 # 同じ方向性でリファクタ
-  # def flag(S):
-  #     return "Yes" if len(S) >= 3 and S[0] == "<" and S[-1] == ">" and all(char == "=" for char in S[1:-1]) else "No"
+
+# def flag(S):
+#     return "Yes" if len(S) >= 3 and S[0] == "<" and S[-1] == ">" and all(char == "=" for char in S[1:-1]) else "No"
 
 
-  # S = input()
-  # print(flag(S))
+# S = input()
+# print(flag(S))
 
 # review
   #and演算子でつながれているため、一行に多くの情報が含まれ、コードが少し読みずらい
@@ -43,13 +48,14 @@ print(flag(S))
 
 
 # sample_1
-  # S = input()
-  # k = len(S) - 2
-  # T = "<" + "="*k + ">"
-  # if S == T:
-  #     print("Yes")
-  # else:
-  #     print("No")
+
+# S = input()
+# k = len(S) - 2
+# T = "<" + "="*k + ">"
+# if S == T:
+#     print("Yes")
+# else:
+#     print("No")
 
 # review
   # 両端が<と>という条件は強いので=の処理をどうシンプルに書くかがポイント
@@ -58,8 +64,9 @@ print(flag(S))
 
 
 # sample_2
-  # S = input()
-  # print("Yes" if S == "<" + "=" * (len(S) - 2) + ">" else "No")
+
+# S = input()
+# print("Yes" if S == "<" + "=" * (len(S) - 2) + ">" else "No")
 
 #review
   # sample_1のリファクタしたかのようなコード

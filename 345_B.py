@@ -39,21 +39,19 @@
 #memo
 # 10進数で19桁まで対応できるようにしなければならないので、途中でfloatに変換後、mathモジュールをインポートしmath.ceil()で切り上げると精度不足になる
 # print(123456789123456789 / 10)
-# 10進数でfloatはpythonだと約15桁程度なので全然足りず不正解になる
+# 10進数でfloatはpythonだと約15桁程度なので足りず不正解になる
 # リファクタしたコードはintで計算してるので桁数が足りる
 # 切り上げ手法はイディオムとして覚える
 
-import math
 
-def keisan(x):
-    return math.ceil(x / 10)
-    # else:
-    #     tyousei = x // 10
-    #     if x % 10 != 0:
-    #         tyousei += 1
-    #     return tyousei
+# 精度不足なコード例
+
+# import math
+
+# def keisan(x):
+#     return math.ceil(x / 10)
 
 
-x = int(input())
-print(keisan(x))
+# x = int(input())
+# print(keisan(x))
 
